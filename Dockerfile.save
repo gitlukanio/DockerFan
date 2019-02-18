@@ -1,0 +1,15 @@
+FROM resin/rpi-raspbian:wheezy
+
+COPY skrypt.py /
+
+RUN apt-get update && apt-get install -y libraspberrypi-bin
+
+RUN apt-get install -y python3
+
+WORKDIR /
+
+RUN python skrypt.py
+
+
+
+
